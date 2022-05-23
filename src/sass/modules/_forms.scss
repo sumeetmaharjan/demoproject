@@ -1,0 +1,44 @@
+.biz-form {
+    display: block;
+    width: 100%;
+    color: $bizDark;
+    background-clip: padding-box;
+    border: 1px solid $bizDark-900;
+    border-radius: 8px;
+    appearance: none; // Fix appearance for date inputs in Safari
+    @apply p-4;
+
+    &[type='file'] {
+        overflow: hidden; // prevent pseudo element button overlap
+        &:not(:disabled):not([readonly]) {
+            cursor: pointer;
+        }
+    }
+
+    // Customize the `:focus` state to imitate native WebKit styles.
+    &:focus {
+        color: $bizDark;
+        // background-color: $input-focus-bg;
+        border-color: $bizDark-900;
+        outline: 0;
+    }
+
+    // Placeholder
+    &::placeholder {
+        color: $bizDark-700;
+        // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+        opacity: 1;
+    }
+
+    &:disabled,
+    &[readonly] {
+        background-color: $bizDark-900;
+        border-color: $bizDark-900;
+        // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+        opacity: 1;
+    }
+
+    &.error {
+        border-color: $bizRed;
+    }
+}

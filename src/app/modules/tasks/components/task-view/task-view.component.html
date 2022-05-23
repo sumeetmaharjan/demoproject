@@ -1,0 +1,46 @@
+<div class="wrapper m-4">
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <span class="block sm:inline">Stored in localstorage.</span>
+    </div>
+
+    <div class="my-4 w-full md:w-1/2 mx-auto">
+        <input (keyup.enter)="onEnterPress()"
+            class="shadow appearance-none border rounded w-full py-2 px-3 dark:bg-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
+            type="text" placeholder="Add A Todo" name="taskValue" [(ngModel)]="taskValue">
+        <div class="ml-auto max-w-fit mt-2">
+            <button class="btn btn-red mr-2" (click)="onClearAll()">Clear All</button>
+            <button class="btn btn-violet mr-2" (click)="onEnterPress()">Add</button>
+            <button class="btn btn-violet" (click)="onDownloadTodo()">Download</button>
+        </div>
+    </div>
+    <div class="w-full md:w-1/2 mx-auto">
+        <h2 class="mb-4 dark:text-white">To Do</h2>
+        <hr>
+        <ul class="list-none mt-4 mx-4">
+            <li class="border-b p-2 flex flex-row" *ngFor="let list of tasksList; index as i">
+                <div class="flex items-center">
+                    <input type="checkbox" class="default:ring-2 mr-4" (click)="onClicked(i)" />
+                </div>
+                <div class="dark:text-white">
+                    {{list}}
+                </div>
+            </li>
+        </ul>
+
+        <ng-container *ngIf="taskListCompleted.length>0">
+            <h2 class="mt-4 mb-4 dark:text-white">Completed</h2>
+            <hr>
+            <ul class="list-none mt-4 mx-4">
+                <li class="border-b p-2 flex flex-row" *ngFor="let list of taskListCompleted; index as i">
+                    <div class="flex items-center">
+                        <input type="checkbox" class="default:ring-2 mr-4" checked disabled />
+                    </div>
+                    <div class="dark:text-white">
+                        {{list}}
+                    </div>
+                </li>
+            </ul>
+        </ng-container>
+
+    </div>
+</div>

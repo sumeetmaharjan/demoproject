@@ -1,0 +1,31 @@
+.btn {
+    cursor: pointer;
+    min-width: 100px;
+    font-family: $secondaryFont;
+    border-radius: 15px;
+    border: none;
+    line-height: 1;
+    height: 31px;
+    padding: 0 1rem;
+
+    &.btn-add {
+        color: $white;
+        background: $bizGreen;
+        @include button-variant($white, $bizGreen);
+    }
+    &.btn-violet {
+        color: $white;
+        background: $bizViolet;
+        @include button-variant($white, $bizViolet);
+    }
+    &.btn-blue {
+        color: $white;
+        background: $bizBlue;
+        @include button-variant($white, $bizBlue);
+    }
+    &.btn-red {
+        color: $white;
+        background: $bizRed;
+        @include button-variant($white, $bizRed);
+    }
+}

@@ -1,0 +1,50 @@
+@function map-get-multiple($map, $values) {
+    $result: ();
+    @each $key, $value in $map {
+        @if (index($values, $key) != null) {
+            $result: map-merge(
+                $result,
+                (
+                    $key: $value
+                )
+            );
+        }
+    }
+    @return $result;
+}
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+    $max: map-get($breakpoints, $name);
+    @return if($max and $max > 0, $max - 0.02, null);
+}
+
+@function subtract($value1, $value2, $return-calc: true) {
+    @if $value1 == null and $value2 == null {
+        @return null;
+    }
+
+    @if $value1 == null {
+        @return -$value2;
+    }
+
+    @if $value2 == null {
+        @return $value1;
+    }
+
+    @if type-of($value1) == number and type-of($value2) == number and comparable($value1, $value2) {
+        @return $value1 - $value2;
+    }
+
+    @if type-of($value2) != number {
+        $value2: unquote('(') + $value2 + unquote(')');
+    }
+
+    @return if($return-calc == true, calc(#{$value1} - #{$value2}), $value1 + unquote(' - ') + $value2);
+}

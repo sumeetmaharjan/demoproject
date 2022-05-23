@@ -1,0 +1,9 @@
+.text-violet {
+    color: $bizViolet !important;
+}
+
+.error-message {
+    padding: 0.5rem;
+    color: $bizRed !important;
+    @apply text-sm;
+}

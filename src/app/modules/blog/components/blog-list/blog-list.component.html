@@ -1,0 +1,53 @@
+<div class="container mx-auto pt-7">
+
+    <!-- <h1 class="text-left mb-5 text-5xl dark:text-white">BLOGS</h1> -->
+
+    <div class="card-tw 2xl:hidden" *ngFor="let blog of blogList">
+        <div class="md:flex">
+            <div class="md:shrink-0">
+                <img class="h-48 w-full object-cover md:h-full md:w-48" src="assets/image/banner_ph.jpg"
+                    alt="Man looking at item at a store">
+            </div>
+            <div class="p-8">
+                <ng-container *ngIf="blog.tags && blog.tags.length >0">
+                    <span class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+                        *ngFor="let tag of blog.tags">#{{tag}}&nbsp;</span>
+                </ng-container>
+                <a class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+                    {{ blog.title }}
+                </a>
+                <p class="my-2 text-slate-500">
+                    {{ blog.contentSummary}}
+                </p>
+                <div class="flex flex-row justify-between items-center">
+                    <div class="date italic font-semibold dark:text-black">{{blog.createdDate | date:'dd MMM yyyy'}}
+                    </div>
+                    <button class="btn btn-violet btn-sm">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="show-on-wide card-wrapper flex flex-row flex-wrap justify-center">
+        <div class="card" *ngFor="let blog of blogList">
+            <div class="relative">
+                <img src="assets/image/banner_ph.jpg" alt="" class="object-cover " height="100">
+
+                <div class="w-full p-3 bg-white absolute top-2/3 dark:bg-gray-800">
+                    <h2 class="font-bold text-2xl dark:text-white">{{blog.title}}</h2>
+                    <h3 class="text-sm mb-3 truncate dark:text-white">{{blog.content}}</h3>
+                    <div class="tags mb-3" *ngIf="blog.tags && blog.tags.length >0">
+                        <span class="tag bg-teal-100 mr-2 p-1 rounded-lg font-bold"
+                            *ngFor="let tag of blog.tags">#{{tag}}</span>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <div class="date italic font-semibold dark:text-white">{{blog.createdDate | date:'dd MMM yyyy'}}
+                        </div>
+                        <button class="btn btn-violet">Views</button>
+                    </div>
+                </div>
+                <div class="new absolute top-0 bg-green-700 text-white p-2">NEW</div>
+            </div>
+        </div>
+    </div>
+</div>

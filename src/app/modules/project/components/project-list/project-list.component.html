@@ -1,0 +1,25 @@
+<h1 class="p-6 dark:text-white">
+    Projects
+</h1>
+
+<div class="flex flex-col items-center justify-center flex-wrap gap-6">
+    <div class="flex items-center">
+        <div class="my-4">
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 dark:bg-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
+                type="text" placeholder="Search Projects" (keyup)="onKeyPress($event)">
+        </div>
+    </div>
+    <div class="flex flex-row gap-2 flex-wrap justify-center">
+        <div [routerLink]="project.route" *ngFor="let project of projectList|filter:searchValue:'name'"
+            class="w-64 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 p-6 cursor-pointer">
+            <div class="flex flex-col items-center">
+                <img class="mb-3 h-24" [ngClass]="darkMode?'svg-black':'svg-white'" [src]="project.icon" alt="Avatar">
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+                    {{project.name}}</h5>
+                <span class="text-sm text-gray-500 dark:text-gray-400">{{project.shortDescription}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>

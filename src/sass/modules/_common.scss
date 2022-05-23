@@ -1,0 +1,11 @@
+.show-on-wide {
+    @apply hidden 2xl:block;
+}
+
+.svg-black {
+    filter: invert(1);
+}
+
+.svg-white {
+    filter: invert(0);
+}

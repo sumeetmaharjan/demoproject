@@ -1,0 +1,112 @@
+// ==========================================================================
+// Config
+// Define variables, maps and fonts at this partial.
+// ==========================================================================
+
+//Enter your Web Address here for print media
+$domain-name: 'bizvue.io';
+
+//Text
+$base__font-size: 15px;
+$base__line: 24px;
+
+//Font Stacks
+// $font-url--google: 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap';
+
+// Biz Vue Rebranding Color Pallets
+$bizGreen: #31c48d;
+$bizGreen-alt: #11d996;
+
+$bizRed: #ff0054;
+
+$bizOrange: #ff7b00;
+$bizYellow: #ffbd00;
+
+$bizPurple: #cd418d;
+$bizPurple-alt: #9d366b;
+$bizPurple-alt-2: #9a5593;
+
+$bizViolet: #7856fc;
+
+$bizBlue: #258eea;
+$bizBlue-alt: #7f84c9;
+
+$bizDark: #333333;
+$bizDark-400: #6c757d;
+$bizDark-700: #adb5bd;
+$bizDark-900: #e9ecef;
+
+$white: #ffffff;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+
+$black: #000;
+$gray: #c7c7c7;
+$red: #d24d57;
+$blue: #3a539b;
+$light-blue: #009bde;
+$yellow: #f7ca18;
+$green: #36d7b7;
+
+//Message Colors
+$error: lighten($red, 5%) !default;
+$success: $green !default;
+$edit: $yellow !default;
+
+//Breakpoints
+$sm-device: 576px;
+$md-device: 768px;
+$lg-device: 992px;
+$xl-device: 1200px;
+
+//UI Colors
+$ui-colors: (
+    default: $blue,
+    success: $success,
+    error: $error,
+    warning: $edit
+);
+
+//Color Palette
+$palettes: (
+    gray-shades: (
+        base: $gray,
+        dark: darken($gray, 20%),
+        light: lighten($gray, 20%)
+    ),
+    blue-shades: (
+        base: $blue,
+        dark: darken($blue, 20%),
+        light: lighten($blue, 20%)
+    )
+);
+
+//Font size variables
+$default-font-size: $base__font-size - 3px;
+$small-font-size: $default-font-size - 2px;
+$lg-font-size: $default-font-size + 2px;
+
+//Heading font size vairables
+$primary-text: 15px !default;
+$head1-font-size: 25px !default;
+$head2-font-size: 18px !default;
+$head3-font-size: $head1-font-size - 16px !default;
+
+//Path to Assets
+$path--rel: '../images';
+
+//Color Usage
+$primary-color: #d24d57;
+$secondary-color: $black;
+$accent-color: $gray;
+$shadow-color: rgba($black, 0.2);
+$border-color: $gray;
+$color-text: $black;
+$color-link: $bizViolet;

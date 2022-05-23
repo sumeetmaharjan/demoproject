@@ -1,0 +1,64 @@
+@mixin transition($transition...) {
+    @if length($transition) == 0 {
+        $transition: $transition-base;
+    }
+
+    @if length($transition) > 1 {
+        @each $value in $transition {
+            @if $value == null or $value == none {
+                @warn "The keyword 'none' or 'null' must be used as a single argument.";
+            }
+        }
+    }
+
+    @if nth($transition, 1) != null {
+        transition: $transition;
+    }
+}
+
+@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
+    @if $enable-rounded {
+        border-radius: valid-radius($radius);
+    } @else if $fallback-border-radius != false {
+        border-radius: $fallback-border-radius;
+    }
+}
+
+@mixin overlay-backdrop($zindex, $backdrop-bg, $backdrop-opacity) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $zindex;
+    width: 100vw;
+    height: 100vh;
+    background-color: $backdrop-bg;
+
+    // Fade for backdrop
+    &.fade {
+        opacity: 0;
+    }
+    &.show {
+        opacity: $backdrop-opacity;
+    }
+}
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
