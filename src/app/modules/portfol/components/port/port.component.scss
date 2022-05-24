@@ -10,3 +10,33 @@
     color: white;
     font-size: 1.5rem;
 }
+
+.res-section {
+    .sec-block {
+        padding: 0 0 0 1rem;
+
+        .sec-sub {
+            font-style: italic;
+        }
+
+        .sec-year {
+            font-style: italic;
+            color: #449399;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .sec-detail {
+        margin-top: 2rem;
+    }
+}
+
+.hovEff {
+    cursor: pointer;
+
+    &:hover {
+        @apply bg-gray-600 text-white;
+    }
+}
