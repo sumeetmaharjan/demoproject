@@ -27,11 +27,11 @@
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": ["src/favicon.ico", "src/assets", "src/web.config"],
-                        "styles": ["src/sass/styles.scss"],
+                        "styles": ["src/sass/styles.scss", "node_modules/aos/dist/aos.css"],
                         "stylePreprocessorOptions": {
                             "includePaths": ["src/sass/"]
                         },
-                        "scripts": []
+                        "scripts": ["node_modules/aos/dist/aos.js"]
                     },
                     "configurations": {
                         "production": {

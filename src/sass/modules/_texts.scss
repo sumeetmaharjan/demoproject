@@ -7,3 +7,12 @@
     color: $bizRed !important;
     @apply text-sm;
 }
+
+.tag {
+    background-color: cadetblue;
+    border-radius: 15px;
+    padding: 5px 15px;
+    user-select: none;
+    color: white;
+    font-size: 1.5rem;
+}

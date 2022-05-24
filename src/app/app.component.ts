@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppTransportService } from './services/app-transport.service';
-
+import * as AOS from 'aos';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     isDarkMode: boolean;
     constructor (private appTransport: AppTransportService, private router: Router) {
         this.isDarkMode = this.appTransport.darkMode;
         this.appTransport.darkModeEvent.subscribe((change) => {
             this.isDarkMode = change;
         });
+    }
+
+    ngOnInit (): void {
+        AOS.init();
     }
 
     toggleDarkMode () {

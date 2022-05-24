@@ -1,0 +1,25 @@
+<div class="flex flex-col">
+    <div class="text-white my-5">
+        <h1 class="text-center text-4xl">Things I've Built</h1>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 mx-0 md:mx-64 text-black dark:text-white">
+        <ng-container *ngFor="let work of works">
+            <div
+                class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <img class="rounded-t-lg" [src]="work.image" alt="">
+                <div class="p-5">
+                    <a>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            {{work.title}}</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{work.description}}</p>
+                    <div class="flex flex-row flex-wrap text-xs gap-2">
+                        <div class="tag" style="font-size: 11px;" *ngFor="let tag of work.tags">{{tag}}</div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
