@@ -1,0 +1,90 @@
+<div id="home" class="grid items-center wrap">
+    <div class="flex flex-col items-center text-black dark:text-white">
+        <h2>Hi, I am</h2>
+        <h1 class="text-6xl mt-3">Sumeet Maharjan</h1>
+        <h2 class="text-2xl mt-3 text-gray-400 dark:text-gray-100">Full Stack Software Engineer</h2>
+    </div>
+</div>
+<div id="about" class="grid items-center wrap">
+    <div class="flex flex-col items-center text-black dark:text-white">
+        <div class="">
+            <p>I am a full-stack software engineer with a background in computer engineering.</p>
+        </div>
+        <div class="flex flex-row gap-6 mt-6">
+            <div class="flex flex-col">
+                <div class="flex justify-center font-bold text-2xl">4+</div>
+                <div class="flex text-gray-500">Years Experience</div>
+            </div>
+            <div class="flex flex-col">
+                <div class="flex justify-center font-bold text-2xl">5+</div>
+                <div class="flex text-gray-500 ">Project Completed</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="skills" class="grid items-center wrap">
+    <div class="flex flex-col  text-black dark:text-white">
+        <h1 class="text-center text-4xl">My Skills</h1>
+        <div class="mx-1 md:mx-72 mt-4">
+            <h2 class="text-3xl">
+                <img class="cursor-pointer inline-block" width="34" alt="Alien" src="assets/icons/code.svg" />
+                Programming Languages
+            </h2>
+            <div class="flex mb-10 mt-4 gap-4">
+                <div class="tag">C#</div>
+                <div class="tag">TypeScript</div>
+                <div class="tag">HTML</div>
+                <div class="tag">SCSS/CSS</div>
+            </div>
+            <h2 class="text-3xl">
+                <img class="cursor-pointer inline-block" width="34" alt="Alien" src="assets/icons/browser.svg" />
+                Web Frameworks and Libraries
+            </h2>
+            <div class="flex mb-10 mt-4 gap-4">
+                <div class="tag">ASP.NET Core</div>
+                <div class="tag">Angular</div>
+                <div class="tag">React</div>
+            </div>
+            <h2 class="text-3xl">
+                <img class="cursor-pointer inline-block" width="25" alt="Alien" src="assets/icons/database.svg" />
+                Databases
+            </h2>
+            <div class="flex mb-10 mt-4 gap-4">
+                <div class="tag">SQL Server</div>
+                <div class="tag">MySQL</div>
+            </div>
+            <h2 class="text-3xl">
+                <img class="cursor-pointer inline-block" width="34" alt="Alien" src="assets/icons/atom.svg" />
+                Technologies</h2>
+            <div class="flex mb-5 mt-4 gap-4">
+                <div class="tag">Azure</div>
+                <div class="tag">REST API</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="works" class="grid items-center wrap">
+    <div class="flex flex-wrap justify-center gap-4 mx-0 md:mx-64 text-black dark:text-white">
+        <ng-container *ngFor="let work of works">
+            <div
+                class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+
+                <img class="rounded-t-lg" [src]="work.image" alt="">
+
+                <div class="p-5">
+                    <a>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            {{work.title}}</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{work.description}}</p>
+                    <div class="flex flex-row flex-wrap text-xs gap-2">
+                        <div class="tag" style="font-size: 11px;" *ngFor="let tag of work.tags">{{tag}}</div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

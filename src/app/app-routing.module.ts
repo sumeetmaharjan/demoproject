@@ -8,6 +8,10 @@ const routes: Routes = [
         component: FullComponent,
         children: [
             {
+                path: '',
+                loadChildren: () => import('./modules/portfol/portfol-routing.module').then((m) => m.PortfolRoutingModule)
+            },
+            {
                 path: 'projects',
                 loadChildren: () => import('./modules/project/project-routing.module').then((m) => m.ProjectRoutingModule)
             },

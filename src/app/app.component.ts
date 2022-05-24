@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppTransportService } from './services/app-transport.service';
 
 @Component({
@@ -7,9 +8,8 @@ import { AppTransportService } from './services/app-transport.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'Main Site';
     isDarkMode: boolean;
-    constructor (private appTransport: AppTransportService) {
+    constructor (private appTransport: AppTransportService, private router: Router) {
         this.isDarkMode = this.appTransport.darkMode;
         this.appTransport.darkModeEvent.subscribe((change) => {
             this.isDarkMode = change;
@@ -19,5 +19,15 @@ export class AppComponent {
     toggleDarkMode () {
         this.appTransport.darkMode = !this.appTransport.darkMode;
         localStorage.setItem('darkMode', this.isDarkMode.toString());
+    }
+
+    scrollToView (id: string) {
+        this.router.navigate(['/']).then(() => {
+            const element = document.querySelector('#' + id)!;
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
     }
 }

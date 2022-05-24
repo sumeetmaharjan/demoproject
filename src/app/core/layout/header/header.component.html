@@ -1,1 +1,13 @@
-<p>header works!</p>
+<div class="toolbar px-4 bg-blue-600 dark:bg-black" role="banner">
+  <img class="cursor-pointer" width="40" alt="Alien" src="assets/icons/laptop.svg" [routerLink]="['/']" />
+  <div class="flex flex-row">
+    <div class="cursor-pointer" [routerLink]="['/']">Sumeet Maharjan</div>
+    <div class="ml-5 cursor-pointer">Task</div>
+    <div class="ml-5 cursor-pointer" [routerLink]="['/','projects']">Project</div>
+  </div>
+  <div class="spacer"></div>
+  <label class="switch">
+    <input type="checkbox" checked (click)="toggleDarkMode()">
+    <span class="slider round"></span>
+  </label>
+</div>

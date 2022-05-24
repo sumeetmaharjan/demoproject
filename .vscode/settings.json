@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/2b544e70-e710-48e7-bc91-fd459be543da/resourceGroups/WebApp/providers/Microsoft.Web/sites/sumeetportfolio",
+    "appService.deploySubpath": "."
+}
